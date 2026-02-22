@@ -1,0 +1,26 @@
+[
+    {
+        "TestcaseNo": "TC0001",
+        "companyname": "Testleaf",
+        "firstname": "Tom",
+        "lastname": "Curran",
+        "sourceDropDown": "Direct Mail",
+        "marketingCampaign": "DEMO_MKTG_CAMP",
+        "industryIndex": 6,
+        "currency": "INR",
+        "country": "India",
+        "state": "TAMILNADU"
+    } ,
+    {
+        "TestcaseNo": "TC0002",
+        "companyname": "Testleaf",
+        "firstname": "Mounee",
+        "lastname": "Sree",
+        "sourceDropDown": "Direct Mail",
+        "marketingCampaign": "DEMO_MKTG_CAMP",
+        "industryIndex": 6,
+        "currency": "INR",
+        "country": "India",
+        "state": "TAMILNADU"
+    }
+]

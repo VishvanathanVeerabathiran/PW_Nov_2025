@@ -1,0 +1,10 @@
+var firstName ="Vishvanathan";
+var companyName ="TCS";
+var mobilenNumber = 9524242092;
+var isAutomation = true;
+var hasPlayWright;
+var middleName = null;
+console.log("****************");
+console.log(firstName);
+console.log(typeof firstName);
+console.log("****************");console.log(companyName);console.log(typeof companyName);console.log("****************");console.log(mobilenNumber);console.log(typeof mobilenNumber,+" "+ firstName);console.log("****************");console.log(isAutomation);console.log(typeof isAutomation);console.log("****************");console.log(hasPlayWright);console.log(typeof hasPlayWright);console.log("****************");console.log(middleName);console.log(typeof middleName);console.log("****************");

@@ -1,0 +1,11 @@
+[
+    {
+        "TcaseId": "TC0001",
+        "url": "http://leaftaps.com/opentaps/control/main",
+        "username": "DemoSalesManager",
+        "password": "crmsfa"
+    },
+    {
+ "TcaseId": "TC0002","url": "http://leaftaps.com/opentaps/control/main", "username": "DemoCSR", "password": "crmsfa"
+    }
+]

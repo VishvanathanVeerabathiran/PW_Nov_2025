@@ -1,0 +1,61 @@
+import { chromium, expect, test } from "@playwright/test";
+test.use({ storageState: "Data/salesforceLogin.json" })
+test('Salesforce Marathon1', async ({ page }) => {
+    await page.goto('https://orgfarm-554300c533-dev-ed.develop.lightning.force.com/lightning/page/home');
+    await page.locator(`//div[@class='slds-icon-waffle']`).click();
+    await page.waitForTimeout(5000); await page.locator(`//button[text()='View All']`).click();
+    await page.waitForTimeout(5000); await page.locator(`.slds-input`).fill(`Marketing`);
+    await page.waitForTimeout(5000); await page.locator(`//p[@class='slds-truncate']/mark`).click();
+    await page.locator(`//a[contains(@class,'slds-context-bar__label-action dndItem')]/span[text()='Leads']`).click();
+    await page.locator(`//button[@name='New']`).click();
+    await page.waitForTimeout(3000); await page.locator(`//button[contains(@class,'slds-combobox__input slds-input_faux') and @aria-label='Salutation']`).click();
+    await page.locator(`(//span[text()='Mr.'])[1]`).click();
+    await page.locator(`//input[@name='firstName']`).fill(`Vishvanathan`);
+    await page.locator(`//input[@name='lastName']`).fill(`Veerabathiran`);
+    await page.locator(`//input[@name='Company']`).fill(`Testleaf`);
+    await page.locator(`//button[@name='SaveEdit']`).click();
+    await page.waitForTimeout(3000);
+    const leadNameLocator = page.locator(`//lightning-formatted-name[@slot='primaryField']`);
+    const leadName = await leadNameLocator.textContent();
+    console.log(`Created lead name is : ` + leadName);
+    await expect(leadNameLocator).toHaveText(`Mr. Vishvanathan Veerabathiran`);
+    await page.locator(`//button[@class='slds-button slds-button_icon-border-filled fix-slds-button_icon-border-filled slds-button_last']`).nth(0).click();
+    await page.locator(`//span[text()='Convert']`).click(); await page.waitForTimeout(3000);
+    await page.locator(`(//button[contains(@class,'slds-button slds-button_neutral slds-button_stretc')])[3]`).click();
+    await page.locator(`(//input[@class=' input'])[4]`).fill(`Testleaf QA`);
+    await page.locator(`//button[text()='Convert']`).click();
+    const leadConverted = page.locator(`//div[@class='panel runtime_sales_leadConvertedConfirmationDesktop']//h2`);
+    await expect(leadConverted).toBeVisible();
+    const convertedText = await leadConverted.textContent();
+    console.log(`Lead conversion status : ` + convertedText);
+    await page.locator(`//button[text()='Go to Leads']`).click();
+    await page.waitForTimeout(3000);
+    const searchLocator = page.locator(`(//button[contains(@class,'slds-button slds-button_neutral')])[1]`)
+    await searchLocator.nth(0).click();
+    const searcLocator1 = page.locator(`(//button[contains(@class,'slds-button slds-button_neutral')])[1]/lightning-primitive-icon`);
+    await searcLocator1.click();
+    await page.waitForTimeout(3000);
+    await searchLocator.fill(`Vishvanathan`);
+    await searchLocator.press('Enter');
+    const searchloc = page.locator(`(//input[@type='search'])[3]`);
+    await searchloc.click();
+    await searchloc.fill(`Vishvanathan`);
+    await searchloc.press('Enter');
+    await page.waitForTimeout(3000);
+    const leadSearchResult = page.locator(`//div[@class='slds-text-heading--small noResultsMessage']//lightning-formatted-rich-text/span`);
+    await expect(leadSearchResult).toBeVisible();
+    const searchResultText = leadSearchResult.innerText();
+    console.log(`Lead search result : ` + searchResultText);
+    await expect(leadSearchResult).toHaveText(`We searched the objects you use most and didn't find any matches for "`);
+    await page.locator(`//span[text()='Opportunities']`).nth(0).click();
+    const serachBar = page.locator(`//input[@name='Opportunity-search-input']`);
+    serachBar.fill(`Testleaf QA`);
+    serachBar.press('Enter'); await page.waitForTimeout(3000);
+    await page.locator(`(//a[@class='slds-truncate'])[1]`).click();
+    await page.waitForTimeout(3000);
+    const opprtunityNameLocator = page.locator(`//slot[@name='primaryField']/lightning-formatted-text`);
+    await expect(opprtunityNameLocator).toHaveText(`Testleaf QA`);
+    const opportunityName = await opprtunityNameLocator.textContent();
+    console.log(`Created opportunity name is : ` + opportunityName);
+
+})

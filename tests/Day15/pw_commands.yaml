@@ -1,0 +1,34 @@
+Installation
+npm init playwright@latest
+npm config set strict-ssl false
+npm config set registry http://registry.npmjs.org/
+https://github.com/testleaftrainings/PW-JS-Nov-25/blob/main/Day3/NoteDay3.yml
+https://playwright.dev/docs/test-assertions
+
+
+TypeScript Installation commands:---------------------------------
+
+1. npm install -g ts-node2. Check : tsc --version3. Compile the file first using the command : tsc filename.ts4. This will generate a filename.js file5. Now run the js file using the command : node filename.js
+*** To run the tyescript file****npx tsc TypeScript.tsnode filename.js
+
+Get-ExecutionPolicySet-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+Note if you want directly run the .ts file follow below steps :--------------------------------------------------------------
+1. npm install -g ts-node
+
+2. npx tsc --init --> This will create a default tsconfig.json
+
+3. Make below changes in the tsconfig.json{ "compilerOptions": { "module": "CommonJS" }}4. Now execute the file directly using the below command
+ ts-node filename.ts
+//setTimeout(()=>{debugger;},4000) - Toast message - Freeze the dom
+[['html',{open:'always'}]],
+
+Npm install cvs-parse ---- install CSV
+https://rahulshettyacademy.com/AutomationPractice/
+https://playwright.dev/docs/api/class-elementhandle#element-handle-set-input-files
+https://sway.cloud.microsoft/oANivg5LmRjQAyzR
+
+
+https://github.com/microsoft/playwrighthttps://playwright.dev/docs/actionability
+npm install axios - API integration  
+npm install @faker-js/faker 

@@ -1,0 +1,14 @@
+[
+    {
+        "TcaseId": "TC0001",
+        "url": "https://login.salesforce.com/?locale=in",
+        "username": "dilipkumar.rajendran@testleaf.com",
+        "password": "TestLeaf@2025"
+    },
+    {
+ "TcaseId": "TC0002","url": "https://login.salesforce.com/?locale=in", "username": "ravindran.ramdas@testleaf.com", "password": "RaviSalesforce#1234"
+    },
+    {
+"TcaseId": "TC0003","url": "https://login.salesforce.com/?locale=in", "username": "vishvaverizon980@agentforce.com", "password": "Vishva@12"
+    }
+]
